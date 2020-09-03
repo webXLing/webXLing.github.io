@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>js运算 精度问题 | Love Life首页</title>
+    <meta name="description" content="Love Life的前端记录">
+    <link rel="icon" href="/egg.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.7cd03cde.css" as="style"><link rel="preload" href="/assets/js/app.f91e779f.js" as="script"><link rel="preload" href="/assets/js/2.1db349ca.js" as="script"><link rel="preload" href="/assets/js/8.486fbf18.js" as="script"><link rel="prefetch" href="/assets/js/10.31381678.js"><link rel="prefetch" href="/assets/js/11.ca76c14d.js"><link rel="prefetch" href="/assets/js/12.85537e9c.js"><link rel="prefetch" href="/assets/js/13.6c31abef.js"><link rel="prefetch" href="/assets/js/14.216d9b77.js"><link rel="prefetch" href="/assets/js/15.bb4efb52.js"><link rel="prefetch" href="/assets/js/16.0aacc69c.js"><link rel="prefetch" href="/assets/js/17.3e4c73c4.js"><link rel="prefetch" href="/assets/js/18.46929a0e.js"><link rel="prefetch" href="/assets/js/19.b46fe3d9.js"><link rel="prefetch" href="/assets/js/20.f494c0fa.js"><link rel="prefetch" href="/assets/js/21.4fdd86ce.js"><link rel="prefetch" href="/assets/js/22.bdf50771.js"><link rel="prefetch" href="/assets/js/23.3b27b5a8.js"><link rel="prefetch" href="/assets/js/24.973946f9.js"><link rel="prefetch" href="/assets/js/25.d21f17c0.js"><link rel="prefetch" href="/assets/js/26.cc6310ac.js"><link rel="prefetch" href="/assets/js/27.aaa10fcf.js"><link rel="prefetch" href="/assets/js/28.1a6e8768.js"><link rel="prefetch" href="/assets/js/3.e91893f4.js"><link rel="prefetch" href="/assets/js/4.6a2ba286.js"><link rel="prefetch" href="/assets/js/5.85ec610c.js"><link rel="prefetch" href="/assets/js/6.f481367a.js"><link rel="prefetch" href="/assets/js/7.6fb62427.js"><link rel="prefetch" href="/assets/js/9.0a04c08f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7cd03cde.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/egg.png" alt="Love Life首页" class="logo"> <span class="site-name can-hide">Love Life首页</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="分类" class="dropdown-title"><span class="title">分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/folder1/p_19_11_25.html" class="nav-link router-link-exact-active router-link-active">文章</a></li><li class="dropdown-item"><!----> <a href="/pages/folder2/test4.html" class="nav-link">琐碎1</a></li></ul></div></div><div class="nav-item"><a href="/pages/folder1/p_19_11_25.html" class="nav-link router-link-exact-active router-link-active">功能演示</a></div><div class="nav-item"><a href="https://github.com/dwanda" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="分类" class="dropdown-title"><span class="title">分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/folder1/p_19_11_25.html" class="nav-link router-link-exact-active router-link-active">文章</a></li><li class="dropdown-item"><!----> <a href="/pages/folder2/test4.html" class="nav-link">琐碎1</a></li></ul></div></div><div class="nav-item"><a href="/pages/folder1/p_19_11_25.html" class="nav-link router-link-exact-active router-link-active">功能演示</a></div><div class="nav-item"><a href="https://github.com/dwanda" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>记录</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/folder1/p_19_11_25.html" class="active sidebar-link">js运算精度解决</a></li><li><a href="/pages/folder1/p_19_11_26.html" class="sidebar-link">路由页面滚动重置</a></li><li><a href="/pages/folder1/p_19_11_27.html" class="sidebar-link">实现手机号输入-自动分割</a></li><li><a href="/pages/folder1/p_19_11_28.html" class="sidebar-link">移动端line-height失效</a></li><li><a href="/pages/folder1/p_19_11_29.html" class="sidebar-link">Mybatis</a></li><li><a href="/pages/folder1/p_19_12_03.html" class="sidebar-link">!+ </a></li><li><a href="/pages/folder1/p_19_12_26.html" class="sidebar-link">webpack</a></li><li><a href="/pages/folder1/p_20_03_05.html" class="sidebar-link">事件循环</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h4 id="js运算-精度问题"><a href="#js运算-精度问题" class="header-anchor">#</a> js运算 精度问题</h4> <h5 id="除法函数，用来得到精确的除法结果"><a href="#除法函数，用来得到精确的除法结果" class="header-anchor">#</a> 除法函数，用来得到精确的除法结果</h5> <div class="language- line-numbers-mode"><pre class="language-text"><code>  //说明：javascript的除法结果会有误差，在两个浮点数相除的时候会比较明显。这个函数返回较为精确的除法结果。
+  //返回值：arg1除以arg2的精确结果
+  Div: function (arg1, arg2) {
+    arg1 = parseFloat(arg1);
+    arg2 = parseFloat(arg2);
+    var t1 = 0, t2 = 0, r1, r2;
+    try { t1 = arg1.toString().split(&quot;.&quot;)[1].length; } catch (e) { }
+    try { t2 = arg2.toString().split(&quot;.&quot;)[1].length; } catch (e) { }
+    r1 = Number(arg1.toString().replace(&quot;.&quot;, &quot;&quot;));
+    r2 = Number(arg2.toString().replace(&quot;.&quot;, &quot;&quot;));
+    return (r1 / r2) * Math.pow(10, t2 - t1);
+  },
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h5 id="加法函数，用来得到精确的除法结果"><a href="#加法函数，用来得到精确的除法结果" class="header-anchor">#</a> 加法函数，用来得到精确的除法结果</h5> <div class="language- line-numbers-mode"><pre class="language-text"><code>//说明：javascript的加法结果会有误差，在两个浮点数相加的时候会比较明显。这个函数返回较为精确的加法结果。
+//调用：$h.Add(arg1,arg2)
+//返回值：arg1加上arg2的精确结果
+Add: function (arg1, arg2) {
+  arg2 = parseFloat(arg2);
+  var r1, r2, m;
+  try { r1 = arg1.toString().split(&quot;.&quot;)[1].length } catch (e) { r1 = 0 }
+  try { r2 = arg2.toString().split(&quot;.&quot;)[1].length } catch (e) { r2 = 0 }
+  m = Math.pow(100, Math.max(r1, r2));
+  return (this.Mul(arg1, m) + this.Mul(arg2, m)) / m;
+},
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h5 id="减法函数，用来得到精确的减法结果"><a href="#减法函数，用来得到精确的减法结果" class="header-anchor">#</a> 减法函数，用来得到精确的减法结果</h5> <div class="language- line-numbers-mode"><pre class="language-text"><code>  //说明：javascript的加法结果会有误差，在两个浮点数相加的时候会比较明显。这个函数返回较为精确的减法结果。
+  //调用：$h.Sub(arg1,arg2)
+  //返回值：arg1减去arg2的精确结果
+
+  // 获取两个小数 最大的放大位数(n) 使的两个小数都能变为整数后 再去相减 后处于n 保留小数后就可以得到结果
+  Sub: function (arg1, arg2) {
+    arg1 = parseFloat(arg1);
+    arg2 = parseFloat(arg2);
+    var r1, r2, m, n;
+    try { r1 = arg1.toString().split(&quot;.&quot;)[1].length } catch (e) { r1 = 0 }
+    try { r2 = arg2.toString().split(&quot;.&quot;)[1].length } catch (e) { r2 = 0 }
+    m = Math.pow(10, Math.max(r1, r2));
+    //动态控制精度长度
+    n = (r1 &gt;= r2) ? r1 : r2;
+    return ((this.Mul(arg1, m) - this.Mul(arg2, m)) / m).toFixed(n);
+  },
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h5 id="乘法函数，用来得到精确的乘法结果"><a href="#乘法函数，用来得到精确的乘法结果" class="header-anchor">#</a> 乘法函数，用来得到精确的乘法结果</h5> <div class="language- line-numbers-mode"><pre class="language-text"><code>  //说明：javascript的乘法结果会有误差，在两个浮点数相乘的时候会比较明显。这个函数返回较为精确的乘法结果。
+  //调用：$h.Mul(arg1,arg2)
+  //返回值：arg1乘以arg2的精确结果
+
+  // 由于js浮点数 计算有误差 所以 将小数 转为 整数后 然后将除以放大的倍数 这样就可以避免 js精度问题
+  Mul: function (arg1, arg2) {
+    arg1 = parseFloat(arg1);
+    arg2 = parseFloat(arg2);
+    var m = 0, s1 = arg1.toString(), s2 = arg2.toString();
+    try { m += s1.split(&quot;.&quot;)[1].length } catch (e) { }
+    try { m += s2.split(&quot;.&quot;)[1].length } catch (e) { }
+    return Number(s1.replace(&quot;.&quot;, &quot;&quot;)) * Number(s2.replace(&quot;.&quot;, &quot;&quot;)) / Math.pow(10, m);
+  },
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h4 id="js-原生-tofixed-的问题"><a href="#js-原生-tofixed-的问题" class="header-anchor">#</a> js 原生 tofixed() 的问题</h4> <div class="language- line-numbers-mode"><pre class="language-text"><code>  console.log(' parseFloat(4.25).toFixed(2)', parseFloat(4.25).toFixed(2));//  4.25
+  console.log(' parseFloat(4.2501).toFixed(2)', parseFloat(4.2501).toFixed(2));//  4.25
+  console.log(' parseFloat(4.250).toFixed(2)', parseFloat(4.250).toFixed(2));//  4.25
+  console.log(' parseFloat(4.251).toFixed(2)', parseFloat(4.251).toFixed(2));//  4.25
+  console.log(' parseFloat(4.252).toFixed(2)', parseFloat(4.252).toFixed(2));//  4.25
+  console.log(' parseFloat(4.253).toFixed(2)', parseFloat(4.253).toFixed(2));//  4.25
+  console.log(' parseFloat(4.254).toFixed(2)', parseFloat(4.254).toFixed(2));//  4.25
+  console.log(' parseFloat(4.255).toFixed(2)', parseFloat(4.255).toFixed(2));//  4.25
+  console.log(' parseFloat(4.256).toFixed(2)', parseFloat(4.256).toFixed(2));//  4.26
+  console.log(' parseFloat(4.257).toFixed(2)', parseFloat(4.257).toFixed(2));//  4.26
+  console.log(' parseFloat(4.258).toFixed(2)', parseFloat(4.258).toFixed(2));//  4.26
+  console.log(' parseFloat(4.259).toFixed(2)', parseFloat(4.259).toFixed(2));//  4.26
+  console.log('---------------------------------');
+  console.log(' parseFloat(4.2550).toFixed(2)', parseFloat(4.2550).toFixed(2));//  4.25
+  console.log(' parseFloat(4.2551).toFixed(2)', parseFloat(4.2551).toFixed(2));//  4.26
+  console.log(' parseFloat(4.2552).toFixed(2)', parseFloat(4.2552).toFixed(2));//  4.26
+  console.log(' parseFloat(4.2553).toFixed(2)', parseFloat(4.2553).toFixed(2));//  4.26
+  console.log(' parseFloat(4.2554).toFixed(2)', parseFloat(4.2554).toFixed(2));//  4.26
+  console.log(' parseFloat(4.2555).toFixed(2)', parseFloat(4.2555).toFixed(2));//  4.26
+  console.log(' parseFloat(4.2557).toFixed(2)', parseFloat(4.2557).toFixed(2));//  4.26
+  console.log(' parseFloat(4.2558).toFixed(2)', parseFloat(4.2558).toFixed(2));//  4.26
+  console.log(' parseFloat(4.2559).toFixed(2)', parseFloat(4.2559).toFixed(2));//  4.26
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><p>通过上面的 一系列的打印我们可以 得出结论</p> <p>以 4.25(num) 保留两位小数 为例</p> <p>num &gt; 4.2550 则进1</p> <p>保留位 如果是5<br>
+则看的是 保留位的后一位 是否大于0
+大于0 则进1</p> <p>重写toFixed 方法</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>    Number.prototype.toFixed = function (d) {
+      var s = this + &quot;&quot;;
+      if (!d) d = 0;
+      if (s.indexOf(&quot;.&quot;) == -1) s += &quot;.&quot;;
+      s += new Array(d + 1).join(&quot;0&quot;);
+      if (new RegExp(&quot;^(-|\\+)?(\\d+(\\.\\d{0,&quot; + (d + 1) + &quot;})?)\\d*$&quot;).test(s)) {
+        var s = &quot;0&quot; + RegExp.$2, pm = RegExp.$1, a = RegExp.$3.length, b = true;
+        if (a == d + 2) {
+          a = s.match(/\d/g);
+          if (parseInt(a[a.length - 1]) &gt; 4) {
+            for (var i = a.length - 2; i &gt;= 0; i--) {
+              a[i] = parseInt(a[i]) + 1;
+              if (a[i] == 10) {
+                a[i] = 0;
+                b = i != 1;
+              } else break;
+            }
+          }
+          s = a.join(&quot;&quot;).replace(new RegExp(&quot;(\\d+)(\\d{&quot; + d + &quot;})\\d$&quot;), &quot;$1.$2&quot;);
+
+        } if (b) s = s.substr(1);
+        return (pm + s).replace(/\.$/, &quot;&quot;);
+      } return this + &quot;&quot;;
+
+    };
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">lastUpdate:</span> <span class="time">6/3/2020, 10:02:56 AM</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/pages/folder1/p_19_11_26.html">路由页面滚动重置</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f91e779f.js" defer></script><script src="/assets/js/2.1db349ca.js" defer></script><script src="/assets/js/8.486fbf18.js" defer></script>
+  </body>
+</html>
